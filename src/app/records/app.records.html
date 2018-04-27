@@ -1,0 +1,14 @@
+<div>
+  <h1>List of medical records</h1>
+  <h2>{{setup}}</h2>
+</div>
+<div class="card card-block"
+     *ngFor="let record of records">
+  <h4>{{record.type}}</h4>
+  <p class="alert">{{record.desc}}</p>
+  <p *ngIf="record.due_date != null">{{record.due_date}}</p>
+</div>
+<button type="button" class="btn btn-primary"
+        tooltip="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+  Button with tooltip
+</button>
