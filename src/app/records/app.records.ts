@@ -1,30 +1,32 @@
-import { Component } from '@angular/core'
+import {Component} from '@angular/core'
+import {MediRecord} from "./mediRecord";
 
 @Component({
   selector: 'records-list',
   templateUrl: './app.records.html'
 })
-export class RecordsComponent{
+export class RecordsComponent {
   setup: string;
   className: string;
-  records: Object[];
+  records: MediRecord[];
 
-  constructor(){
+  constructor() {
     this.className = "RecordsComponent";
     this.setup = "Test name in " + this.className;
     this.records = [
-      {
-        type: 'appointment',
-        desc: 'wizyta u lekarza',
-        due_date: new Date()
-      },{
-        type: 'medication',
-        desc: 'weź magnes i cynk'
-      },{
-        type: 'blood_test',
-        desc: 'badanie krwi',
-        due_date: new Date()
-      }
-    ]
+      new MediRecord(
+        'appointment',
+        'wizyta u lekarza',
+        new Date()
+      ), new MediRecord(
+        'medication',
+        'weź magnes i cynk',
+        null
+      ), new MediRecord(
+        'blood_test',
+        'badanie krwi',
+        new Date()
+      )
+    ];
   }
 }
