@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Medicare app';
+  title = 'little to-do list app';
 
   alert2(){
     console.log("This is sick");

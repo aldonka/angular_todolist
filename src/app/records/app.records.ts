@@ -1,5 +1,5 @@
 import {Component} from '@angular/core'
-import {MediRecord} from "./mediRecord";
+import {ToDoTask} from "./toDoTask";
 
 @Component({
   selector: 'records-list',
@@ -8,23 +8,29 @@ import {MediRecord} from "./mediRecord";
 export class RecordsComponent {
   setup: string;
   className: string;
-  records: MediRecord[];
+  records: ToDoTask[];
 
   constructor() {
     this.className = "RecordsComponent";
     this.setup = "Test name in " + this.className;
     this.records = [
-      new MediRecord(
+      new ToDoTask(
         'appointment',
         'wizyta u lekarza',
+        'wizyta u lekarza pierwszego kontaktu, skierowanie na badanie krwi',
+        'Dominika',
         new Date()
-      ), new MediRecord(
+      ), new ToDoTask(
         'medication',
         'weź magnes i cynk',
+        'weź codzienną dawkę lekarstw: jedna sztuka magnezu i pół tabletki cynku',
+        'Dominika',
         null
-      ), new MediRecord(
+      ), new ToDoTask(
         'blood_test',
+        'pobranie krwi',
         'badanie krwi',
+        'Dominika',
         new Date()
       )
     ];

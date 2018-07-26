@@ -1,21 +1,2 @@
-<div>
-  <h1>List of medical records</h1>
-  <h2>{{setup}}</h2>
-</div>
-<div class="card card-block"
-     *ngFor="let record of records">
-  <div [hidden] = "record.accomplished">
-    <div>
-      <h4 class="col-6">{{record.type}}</h4>
-      <a class="btn btn-primary col-4" (click)="record.finish_task()">Finished
-      </a>
-    </div>
-    <p class="text-info">{{record.desc}}</p>
-    <p *ngIf="record.due_date != null">{{record.due_date}}</p>
-  </div>
-
-</div>
-<button type="button" class="btn btn-primary"
-        tooltip="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
-  Button with tooltip
-</button>
+<record *ngFor="let r of records" [record]="r">
+</record>
