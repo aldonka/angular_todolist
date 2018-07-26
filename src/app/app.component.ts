@@ -7,12 +7,4 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'little to-do list app';
-
-  alert2(){
-    console.log("This is sick");
-  }
-
-  alert3(){
-    console.log("Double click handled!");
-  }
 }

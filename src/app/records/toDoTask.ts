@@ -24,4 +24,8 @@ export class ToDoTask{
     this.accomplished = true;
   }
 
+  add_task(){
+    console.log("Adding new task");
+  }
+
 }
