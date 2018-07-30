@@ -1,5 +1,4 @@
 import { BrowserModule } from '@angular/platform-browser';
-import {RouterModule, Routes} from "@angular/router";
 import { NgModule } from '@angular/core';
 
 
@@ -9,12 +8,7 @@ import {RecordComponent} from "./records/app.record";
 import {NewRecordComponent} from "./records/app.record.new";
 import {RecordMenu} from "./records/app.record.menu";
 import {Menu} from "./common/app.common.menu";
-
-const appRoutes: Routes = [
-  {path: 'home', component: AppComponent},
-  {path: 'add_task', component: NewRecordComponent},
-  {path: '', redirectTo: 'home', pathMatch: 'full'}
-];
+import {AppRoutingModule} from "./app-routing.module";
 
 @NgModule({
   declarations: [
@@ -27,12 +21,9 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(
-      appRoutes,
-      {enableTracing: true}
-    )
+    AppRoutingModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [ AppComponent ]
 })
 export class AppModule { }
