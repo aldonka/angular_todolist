@@ -1,12 +1,16 @@
 <div class="card card-block" [hidden]="record.accomplished">
   <div>
     <div class="card-title">
-      <strong class="col-md-6">{{record.tag}}</strong>
-      <record-menu [record]="record"></record-menu>
+      <strong class="col-md-8">{{record.tag}}</strong>
+      <record-menu [record]="record" (toggle)="toggle_details()"></record-menu>
     </div>
-    <div class="card-body">
-      <p class="text-info">{{record.description}}</p>
-      <p *ngIf="record.due_date != null">{{record.due_date}}</p>
+    <div class="card-body" >
+      <strong class="text-primary">{{record.title}}</strong>
+      <div *ngIf="showDetails" >
+        <p class="text-info">{{record.description}}</p>
+        <p *ngIf="record.due_date != null">{{record.due_date}}</p>
+      </div>
+
     </div>
   </div>
 

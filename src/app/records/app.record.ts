@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, HostBinding} from '@angular/core';
 import { Input } from '@angular/core';
 import {ToDoTask} from "./toDoTask";
 
@@ -8,4 +8,11 @@ import {ToDoTask} from "./toDoTask";
 })
 export class RecordComponent{
   @Input() record: ToDoTask;
+
+  showDetails: boolean = false;
+
+  public toggle_details() {
+    this.showDetails = !this.showDetails;
+  }
+
 }

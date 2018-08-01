@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core'
+import {Component, EventEmitter, HostListener, Input, Output} from '@angular/core'
 import {ToDoTask} from "./toDoTask";
 
 @Component({
@@ -7,4 +7,10 @@ import {ToDoTask} from "./toDoTask";
 })
 export class RecordMenu {
   @Input() record: ToDoTask;
+  @Output() toggle: EventEmitter<null> = new EventEmitter();
+
+  click(){
+    this.toggle.emit();
+  }
+
 }
