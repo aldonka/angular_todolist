@@ -2,7 +2,7 @@
   <div>
     <div class="card-title">
       <strong class="col-md-8">{{record.tag}}</strong>
-      <record-menu [record]="record" (toggle)="toggle_details()"></record-menu>
+      <record-menu [record]="record" (action)="toggle_details($event)"></record-menu>
     </div>
     <div class="card-body" >
       <strong class="text-primary">{{record.title}}</strong>
