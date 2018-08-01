@@ -7,10 +7,10 @@ import {ToDoTask} from "./toDoTask";
 })
 export class RecordMenu {
   @Input() record: ToDoTask;
-  @Output() toggle: EventEmitter<null> = new EventEmitter();
+  @Output() action: EventEmitter<string> = new EventEmitter();
 
-  click(){
-    this.toggle.emit();
+  do_action(actionType: string){
+    this.action.emit(actionType);
   }
 
 }

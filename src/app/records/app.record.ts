@@ -11,8 +11,14 @@ export class RecordComponent{
 
   showDetails: boolean = false;
 
-  public toggle_details() {
-    this.showDetails = !this.showDetails;
+  public toggle_details(action_type) {
+    if(action_type == 'details'){
+      this.showDetails = !this.showDetails;
+    }else if (action_type == 'edit'){
+      console.log("Edit task!");
+    }else if(action_type == 'remove'){
+      console.log('Task removed.');
+    }
   }
 
 }
