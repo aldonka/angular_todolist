@@ -22,12 +22,12 @@ export class ToDoTask{
     this.accomplished = false;
   }
 
-  finish_task(){
-    this.accomplished = true;
+  static createNewTask(){
+    return new ToDoTask(null, null, null, null, null, null);
   }
 
-  add_task(){
-    console.log("Adding new task");
+  finish_task(){
+    this.accomplished = true;
   }
 
 }

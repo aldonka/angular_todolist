@@ -9,6 +9,7 @@ import {NewRecordComponent} from "./records/app.record.new";
 import {RecordMenu} from "./records/app.record.menu";
 import {Menu} from "./common/app.common.menu";
 import {AppRoutingModule} from "./app-routing.module";
+import {TaskService} from "./records/services/app.record.service";
 
 @NgModule({
   declarations: [
@@ -23,7 +24,7 @@ import {AppRoutingModule} from "./app-routing.module";
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [ TaskService],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }

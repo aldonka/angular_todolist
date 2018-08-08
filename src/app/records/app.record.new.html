@@ -1,11 +1,56 @@
 <div class="card card-block">
-  <h4 class="card-title">Create new record</h4>
-  <div class="form-group">
-    <input type="text" class="form-control" placeholder="title">
-    <input type="text" class="form-control" placeholder="description">
-    <input type="text" class="form-control" placeholder="assign to">
-    <input type="text" class="form-control" placeholder="tag as">
+  <form class="form-horizontal">
+    <fieldset>
 
-  </div>
-  <button type="button" class="btn btn-primary">Add new </button>
+      <!-- Form Name -->
+      <legend>Add task</legend>
+
+      <!-- Text input-->
+      <div class="form-group">
+        <label class="col-md-4 control-label" for="textinput">Title</label>
+        <div class="col-md-4">
+          <input [value]="task.title" (input)="task.title=$event.target.value" id="textinput" name="textinput" type="text" placeholder="task title" class="form-control input-md" required="">
+
+        </div>
+      </div>
+
+      <!-- Select Multiple -->
+      <div class="form-group">
+        <label class="col-md-4 control-label" for="Tags">Select Multiple</label>
+        <div class="col-md-4">
+          <select (change)="addTag($event.target.value)" id="Tags" name="Tags" class="form-control" multiple="multiple">
+            <option [value]="IMP">important</option>
+            <option [value]="SH">shopping</option>
+            <option [value]="H">home</option>
+            <option [value]="DOC">doctor</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Textarea -->
+      <div class="form-group">
+        <label class="col-md-4 control-label" for="textarea">Description</label>
+        <div class="col-md-4">
+          <textarea [value] = "task.description" (input)="$event.target.value" class="form-control" id="textarea" name="textarea">describe task in few words</textarea>
+        </div>
+      </div>
+
+      <!-- Text input-->
+      <div class="form-group">
+        <label class="col-md-4 control-label" for="assignToCreateInput">AssignTo</label>
+        <div class="col-md-4">
+          <input [value] = "task.assignedTo" (input)="$event.target.value" id="assignToCreateInput" name="assignToCreateInput" type="text" placeholder="assign task to sb"
+                 class="form-control input-md">
+          <span class="help-block">type person responsible for task</span>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-md-8">
+          <button (click)="create()" type="button" id="addNewBtn" name="addNewBtn" class="btn btn-success">Add New</button>
+          <button id="cancelNewBtn" type="button" name="cancelNewBtn" class="btn btn-danger">Cancel</button>
+        </div>
+      </div>
+    </fieldset>
+  </form>
 </div>
